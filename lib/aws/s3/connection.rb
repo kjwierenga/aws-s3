@@ -69,7 +69,7 @@ module AWS
       end
       
       def subdomain
-        http.address[/^([^.]+).#{DEFAULT_HOST}$/, 1]
+        http.address[/^(.+)\.#{DEFAULT_HOST}$/, 1]
       end
       
       def persistent?

@@ -178,7 +178,7 @@ module AWS
               options = name
               name    = nil
             end
-            "/#{bucket_name(name)}#{RequestOptions.process(options).to_query_string}"
+            bucket_name(name) == connection.subdomain ? "/#{RequestOptions.process(options).to_query_string}" : "/#{bucket_name(name)}#{RequestOptions.process(options).to_query_string}"
           end
       end
       
